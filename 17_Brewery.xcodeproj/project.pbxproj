@@ -9,21 +9,28 @@
 /* Begin PBXBuildFile section */
 		D44C4D262872F43600C41DEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44C4D252872F43600C41DEC /* AppDelegate.swift */; };
 		D44C4D282872F43600C41DEC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44C4D272872F43600C41DEC /* SceneDelegate.swift */; };
-		D44C4D2A2872F43600C41DEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44C4D292872F43600C41DEC /* ViewController.swift */; };
-		D44C4D2D2872F43600C41DEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D44C4D2B2872F43600C41DEC /* Main.storyboard */; };
 		D44C4D2F2872F43700C41DEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44C4D2E2872F43700C41DEC /* Assets.xcassets */; };
 		D44C4D322872F43700C41DEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D44C4D302872F43700C41DEC /* LaunchScreen.storyboard */; };
+		D44C4D3A287589ED00C41DEC /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44C4D39287589ED00C41DEC /* MainVC.swift */; };
+		D44C4D3D28758A9E00C41DEC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D44C4D3C28758A9E00C41DEC /* SnapKit */; };
+		D44C4D4028758AF200C41DEC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D44C4D3F28758AF200C41DEC /* Kingfisher */; };
+		D44C4D4228758B2A00C41DEC /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44C4D4128758B2A00C41DEC /* Beer.swift */; };
+		D44C4D4428758EC900C41DEC /* BeerListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44C4D4328758EC900C41DEC /* BeerListCell.swift */; };
+		D44C4D4728758F1C00C41DEC /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = D44C4D4628758F1C00C41DEC /* Then */; };
+		D44C4D492875989B00C41DEC /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44C4D482875989A00C41DEC /* DetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D44C4D222872F43600C41DEC /* 17_Brewery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 17_Brewery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D44C4D252872F43600C41DEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D44C4D272872F43600C41DEC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D44C4D292872F43600C41DEC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D44C4D2C2872F43600C41DEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D44C4D2E2872F43700C41DEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D44C4D312872F43700C41DEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D44C4D332872F43700C41DEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D44C4D39287589ED00C41DEC /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		D44C4D4128758B2A00C41DEC /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
+		D44C4D4328758EC900C41DEC /* BeerListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerListCell.swift; sourceTree = "<group>"; };
+		D44C4D482875989A00C41DEC /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +38,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D44C4D4028758AF200C41DEC /* Kingfisher in Frameworks */,
+				D44C4D4728758F1C00C41DEC /* Then in Frameworks */,
+				D44C4D3D28758A9E00C41DEC /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,8 +68,10 @@
 			children = (
 				D44C4D252872F43600C41DEC /* AppDelegate.swift */,
 				D44C4D272872F43600C41DEC /* SceneDelegate.swift */,
-				D44C4D292872F43600C41DEC /* ViewController.swift */,
-				D44C4D2B2872F43600C41DEC /* Main.storyboard */,
+				D44C4D39287589ED00C41DEC /* MainVC.swift */,
+				D44C4D4328758EC900C41DEC /* BeerListCell.swift */,
+				D44C4D482875989A00C41DEC /* DetailVC.swift */,
+				D44C4D4128758B2A00C41DEC /* Beer.swift */,
 				D44C4D2E2872F43700C41DEC /* Assets.xcassets */,
 				D44C4D302872F43700C41DEC /* LaunchScreen.storyboard */,
 				D44C4D332872F43700C41DEC /* Info.plist */,
@@ -83,6 +95,11 @@
 			dependencies = (
 			);
 			name = 17_Brewery;
+			packageProductDependencies = (
+				D44C4D3C28758A9E00C41DEC /* SnapKit */,
+				D44C4D3F28758AF200C41DEC /* Kingfisher */,
+				D44C4D4628758F1C00C41DEC /* Then */,
+			);
 			productName = 17_Brewery;
 			productReference = D44C4D222872F43600C41DEC /* 17_Brewery.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +128,11 @@
 				Base,
 			);
 			mainGroup = D44C4D192872F43600C41DEC;
+			packageReferences = (
+				D44C4D3B28758A9E00C41DEC /* XCRemoteSwiftPackageReference "SnapKit" */,
+				D44C4D3E28758AF200C41DEC /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				D44C4D4528758F1C00C41DEC /* XCRemoteSwiftPackageReference "Then" */,
+			);
 			productRefGroup = D44C4D232872F43600C41DEC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +149,6 @@
 			files = (
 				D44C4D322872F43700C41DEC /* LaunchScreen.storyboard in Resources */,
 				D44C4D2F2872F43700C41DEC /* Assets.xcassets in Resources */,
-				D44C4D2D2872F43600C41DEC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +159,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D44C4D2A2872F43600C41DEC /* ViewController.swift in Sources */,
 				D44C4D262872F43600C41DEC /* AppDelegate.swift in Sources */,
+				D44C4D3A287589ED00C41DEC /* MainVC.swift in Sources */,
 				D44C4D282872F43600C41DEC /* SceneDelegate.swift in Sources */,
+				D44C4D4228758B2A00C41DEC /* Beer.swift in Sources */,
+				D44C4D4428758EC900C41DEC /* BeerListCell.swift in Sources */,
+				D44C4D492875989B00C41DEC /* DetailVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D44C4D2B2872F43600C41DEC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D44C4D2C2872F43600C41DEC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D44C4D302872F43700C41DEC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,7 +310,6 @@
 				INFOPLIST_FILE = 17_Brewery/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -322,7 +337,6 @@
 				INFOPLIST_FILE = 17_Brewery/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -360,6 +374,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D44C4D3B28758A9E00C41DEC /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		D44C4D3E28758AF200C41DEC /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		D44C4D4528758F1C00C41DEC /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D44C4D3C28758A9E00C41DEC /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D44C4D3B28758A9E00C41DEC /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		D44C4D3F28758AF200C41DEC /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D44C4D3E28758AF200C41DEC /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		D44C4D4628758F1C00C41DEC /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D44C4D4528758F1C00C41DEC /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D44C4D1A2872F43600C41DEC /* Project object */;
 }
