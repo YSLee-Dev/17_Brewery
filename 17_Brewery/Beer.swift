@@ -9,11 +9,11 @@ import Foundation
 
 struct Beer : Decodable{
     let id : Int?
-    let name, tageline, description, brewers_Tips, image_URL : String?
-    let food_Paring : [String]?
+    let name, tagline, description, brewers_tips, image_url : String?
+    let food_pairing : [String]?
     
     var tag : String{
-        let tags = tageline?.components(separatedBy: ". ")
+        let tags = tagline?.components(separatedBy: ". ")
         let hashTags = tags?.map{
             "#" + $0.replacingOccurrences(of: " ", with: "")
                 .replacingOccurrences(of: ".", with: "")

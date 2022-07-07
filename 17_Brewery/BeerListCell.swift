@@ -50,7 +50,7 @@ class BeerListCell : UITableViewCell{
             $0.top.equalTo(self.imgView.snp.centerY).offset(5)
         }
         
-        self.accessoryType = .detailButton
+        self.accessoryType = .disclosureIndicator
         self.selectionStyle = .none
         
     }

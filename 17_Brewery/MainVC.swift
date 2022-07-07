@@ -11,7 +11,8 @@ import Kingfisher
 
 class MainVC : UITableViewController{
     
-    var beerList : [Beer] = [Beer(id: 0, name: "name", tageline: "tag", description: "description", brewers_Tips: "tips", image_URL: "img", food_Paring: ["food"])]
+    var beerList : [Beer] = []
+    var currentPage = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,8 @@ class MainVC : UITableViewController{
         
         self.tableView.register(BeerListCell.self, forCellReuseIdentifier: "BeerListCell")
         self.tableView.rowHeight = 150
+        
+        self.dataLoad(of: self.currentPage)
     }
 }
 
@@ -30,14 +33,57 @@ extension MainVC{
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("bbbb")
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "BeerListCell") as? BeerListCell else {return UITableViewCell()}
-        guard let url = URL(string: self.beerList[indexPath.row].image_URL ?? "") else {return UITableViewCell()}
+        guard let url = URL(string: self.beerList[indexPath.row].image_url ?? "") else {return UITableViewCell()}
        
         cell.imgView.kf.setImage(with: url)
         cell.mainTitle.text = self.beerList[indexPath.row].name
-        cell.subTitle.text = self.beerList[indexPath.row].description
+        cell.subTitle.text = self.beerList[indexPath.row].tag
             
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailVC = DetailVC()
+        detailVC.beer = self.beerList[indexPath.row]
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
+}
+
+// DataFetching
+private extension MainVC{
+    func dataLoad(of page : Int){
+        guard let url = URL(string: "https://api.punkapi.com/v2/beers?page=\(page)") else {return}
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        let dataTask = URLSession.shared.dataTask(with: request){ [weak self] data, response, error in
+            guard error == nil,
+                    let self = self,
+                    let response = response as? HTTPURLResponse,
+                    let data = data,
+                    let beers = try? JSONDecoder().decode([Beer].self, from: data)
+            else{
+                print("Error: URLSession data task \(error)")
+                return
+            }
+            switch response.statusCode{
+            case (200...299): // 성공
+                self.beerList += beers
+                self.currentPage += 1
+                print(self.beerList)
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            case (400...499): // 클라이언트 에러
+                print("클라이언트 에러")
+            case (500...599): // 서버 에러
+                print("서버 에러")
+            default:
+                print("에러")
+            }
+        }
+        dataTask.resume()
     }
 }
