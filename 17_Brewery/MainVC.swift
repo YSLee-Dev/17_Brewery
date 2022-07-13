@@ -12,6 +12,7 @@ import Kingfisher
 class MainVC : UITableViewController{
     
     var beerList : [Beer] = []
+    var dataTasks = [URLSessionTask]()
     var currentPage = 1
     
     override func viewDidLoad() {
@@ -22,6 +23,7 @@ class MainVC : UITableViewController{
         
         self.tableView.register(BeerListCell.self, forCellReuseIdentifier: "BeerListCell")
         self.tableView.rowHeight = 150
+        self.tableView.prefetchDataSource = self
         
         self.dataLoad(of: self.currentPage)
     }
@@ -53,7 +55,10 @@ extension MainVC{
 // DataFetching
 private extension MainVC{
     func dataLoad(of page : Int){
-        guard let url = URL(string: "https://api.punkapi.com/v2/beers?page=\(page)") else {return}
+        guard let url = URL(string: "https://api.punkapi.com/v2/beers?page=\(page)"), self.dataTasks.firstIndex(where:{ task in
+            task.originalRequest?.url == url
+        }) == nil
+        else {return}
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -85,5 +90,18 @@ private extension MainVC{
             }
         }
         dataTask.resume()
+        dataTasks.append(dataTask)
+    }
+}
+
+extension MainVC : UITableViewDataSourcePrefetching{
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        guard self.currentPage != 1 else {return}
+        
+        indexPaths.forEach{
+            if ($0.row + 1) / 25 + 1 == self.currentPage{
+                self.dataLoad(of: self.currentPage)
+            }
+        }
     }
 }
